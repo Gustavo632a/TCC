@@ -76,7 +76,7 @@ class AuthRepositoryImplClinica implements AuthRepositoryClinica{
     });
 
     if(result.hasError) {
-      var message = 'Erro ao registrar o usuário';
+      var message = 'Erro ao registrar clínica';
       if(result.statusCode == 400)  {
         message = result.body['Error'];
       }
@@ -103,11 +103,11 @@ class AuthRepositoryImplClinica implements AuthRepositoryClinica{
         throw UserNotFoundException();
       }
 
-      log('Erro ao autenticar o usuário (${result.statusCode})',
+      log('Erro ao autenticar a clínica (${result.statusCode})',
       error: result.statusText,
       stackTrace: StackTrace.current,
       );
-      throw RestClientException('Erro ao autenticar o usuário');
+      throw RestClientException('Erro ao autenticar a clínica');
     }
 
     return UserModelClinica.fromMap(result.body);

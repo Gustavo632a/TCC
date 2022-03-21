@@ -24,7 +24,7 @@ class LoginControllerClinica extends GetxController with LoaderMixin, MessagesMi
     messageListener(_message);
  }
 
-  Future<void> loginclinica({required String cnpj, required String password}) async {
+  Future<void> loginclini({required String cnpj, required String password}) async {
     try {
       _loading.toggle();
       final userLogged = await _authRepository.loginclinica(cnpj, password);

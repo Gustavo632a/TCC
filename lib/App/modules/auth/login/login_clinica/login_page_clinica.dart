@@ -89,7 +89,7 @@ class _LoginPageState extends ChangeState<LoginPageClinica, LoginControllerClini
                         onPressed: () {
                           final formValid = _formKey.currentState?.validate() ?? false;
                           if(formValid) {
-                            controller.loginclinica(cnpj: _cnpjEC.text, password: _passwordEC.text);
+                            controller.loginclini(cnpj: _cnpjEC.text, password: _passwordEC.text);
                           }
 
                         },),

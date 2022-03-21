@@ -25,7 +25,7 @@ with LoaderMixin, MessagesMixin{
     super.onInit();
   }
 
-  Future<void> register({
+  Future<void> registerpaci({
     required String name,
     required String email,
     required String password,

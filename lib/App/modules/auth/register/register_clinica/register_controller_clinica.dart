@@ -25,7 +25,7 @@ with LoaderMixin, MessagesMixin{
     super.onInit();
   }
 
-  Future<void> register({
+  Future<void> registerclini({
     required String name,
     required String cnpj,
     required String email,
@@ -57,8 +57,6 @@ with LoaderMixin, MessagesMixin{
           message: 'Erro ao registrar clínica', 
           type: MessageType.error
           ));
-
-
       }
     
     }

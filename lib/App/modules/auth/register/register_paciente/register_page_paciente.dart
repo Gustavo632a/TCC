@@ -109,7 +109,7 @@ extends ChangeState<RegisterPagePaciente, RegisterControllerPaciente> {
                       onPressed: () {
                         final formValid =  _formKey.currentState?.validate() ?? false;
                         if(formValid) {
-                          controller.register(
+                          controller.registerpaci(
                             name: _nameEC.text, 
                             email: _emailEC.text, 
                             password: _passwordEC.text);

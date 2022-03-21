@@ -123,7 +123,7 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                       onPressed: () {
                         final formValid =  _formKey.currentState?.validate() ?? false;
                         if(formValid) {
-                          controller.register(
+                          controller.registerclini(
                             name: _nameEC.text, 
                             email: _emailEC.text, 
                             cnpj: _cnpjEC.text,

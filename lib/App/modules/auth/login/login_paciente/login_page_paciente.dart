@@ -89,7 +89,7 @@ class _LoginPageState extends ChangeState<LoginPagePaciente, LoginControllerPaci
                         onPressed: () {
                           final formValid = _formKey.currentState?.validate() ?? false;
                           if(formValid) {
-                            controller.login(email: _emailEC.text, password: _passwordEC.text);
+                            controller.loginpaci(email: _emailEC.text, password: _passwordEC.text);
                           }
 
                         },),

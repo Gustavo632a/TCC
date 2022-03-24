@@ -1,4 +1,6 @@
 import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 class UserModelClinica {
 
   final int id;
@@ -74,4 +76,36 @@ class UserModelPaciente {
   String toJson() => json.encode(toMap());
 
   factory UserModelPaciente.fromJson(String source) => UserModelPaciente.fromMap(json.decode(source));
+}
+class UserModelMedico {
+  final int id;
+  final String name;
+  final String especialidade;
+  final String horario;
+
+  UserModelMedico({
+    required this.id,
+    required this.name,
+    required this.especialidade,
+    required this.horario,
+  });
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'especialidade': especialidade,
+      'horario': horario,
+    };
+  }
+  factory UserModelMedico.fromMap(Map<String, dynamic> map) {
+    return UserModelMedico(
+      id: map['id']?.toInt() ?? 0,
+      name: map['name'] ?? '',
+      especialidade: map['especialidade'] ?? '',
+      horario: map['horario'] ?? '',
+      );
+  }
+  String toJson() => json.encode(toMap());
+
+  factory UserModelMedico.fromJson(String source) => UserModelMedico.fromMap(json.decode(source));
 }

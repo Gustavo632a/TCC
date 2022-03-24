@@ -24,10 +24,10 @@ class LoginControllerPaciente extends GetxController with LoaderMixin, MessagesM
     messageListener(_message);
  }
 
-  Future<void> loginpaci({required String email, required String password}) async {
+  Future<void> loginpaci({required String cpf, required String password}) async {
     try {
       _loading.toggle();
-      final userLogged = await _authRepository.loginpaciente(email, password);
+      final userLogged = await _authRepository.loginpaciente(cpf, password);
 
       final storage = GetStorage();
       storage.write(Constants.USER_KEY , userLogged.id);

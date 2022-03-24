@@ -19,6 +19,13 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
 
   final _formKey = GlobalKey<FormState>();
   final _nameEC = TextEditingController();
+  final _cepEC = TextEditingController();
+  final _telefoneEC = TextEditingController();
+  final _ruaEC = TextEditingController();
+  final _medicoEC = TextEditingController();
+  final _especialidadeEC = TextEditingController();
+  final _horarioEC = TextEditingController();
+  final _bairroEC = TextEditingController();
   final _cnpjEC = TextEditingController();
   final _emailEC = TextEditingController();
   final _passwordEC = TextEditingController();
@@ -82,11 +89,40 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                     height: 27,
                   ),
                   ChangeTextformfield(
-                    label: 'E-mail',
-                    controller: _emailEC,
+                    label: 'Bairro',
+                    controller: _bairroEC,
                     validator: Validatorless.multiple([
-                      Validatorless.required('E-mail Obrigatório'),
-                      Validatorless.email('E-mail Inválido')
+                      Validatorless.required('Bairro Obrigatório'),
+                    ]
+                    ),),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
+                    label: 'Rua',
+                    controller: _ruaEC,
+                    validator: Validatorless.multiple([
+                      Validatorless.required('Rua Obrigatório'),
+                    ]
+                    ),),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
+                    label: 'CEP',
+                    controller: _cepEC,
+                    validator: Validatorless.multiple([
+                      Validatorless.required('CEP Obrigatório'),
+                    ]
+                    ),),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
+                    label: 'Telefone',
+                    controller: _telefoneEC,
+                    validator: Validatorless.multiple([
+                      Validatorless.required('Telefone Obrigatório'),
                     ]
                     ),),
                   const SizedBox(
@@ -97,7 +133,7 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                     controller: _passwordEC,
                     obscureText: true,
                     validator: Validatorless.multiple([
-                      Validatorless.required('Password Obrigatório'),
+                      Validatorless.required('Senha Obrigatório'),
                       Validatorless.min(6, 'Senha deve conter pelo menos 6 caracteres')
                     ]
                     ),
@@ -119,14 +155,30 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                   Center(
                     child: ChangeButton(
                       width: double.infinity,
+                      label: 'Cadastrar médicos',
+                      onPressed: () {
+                        Get.toNamed('/auth/registermedico');
+                      }
+                    ),
+                  ),
+                  Center(
+                    child: ChangeButton(
+                      width: double.infinity,
                       label: 'Cadastrar',
                       onPressed: () {
                         final formValid =  _formKey.currentState?.validate() ?? false;
                         if(formValid) {
                           controller.registerclini(
-                            name: _nameEC.text, 
-                            email: _emailEC.text, 
+                            name: _nameEC.text,
+                            rua: _ruaEC.text,
+                            bairro: _bairroEC.text,
+                            cep: _cepEC.text,
+                            telefone: _telefoneEC.text,
                             cnpj: _cnpjEC.text,
+                            medico: _medicoEC.text,
+                            especialidade: _especialidadeEC.text,
+                            horario: _horarioEC.text,
+                            email: _emailEC.text, 
                             password: _passwordEC.text);
                         }
                       },

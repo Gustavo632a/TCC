@@ -5,6 +5,9 @@ abstract class AuthRepositoryClinica{
     Future<UserModelClinica> registerclinica(String name, String cnpj,String email, String password);
 }
 abstract class AuthRepositoryPaciente{
-    Future<UserModelPaciente> loginpaciente(String email, String password);
-    Future<UserModelPaciente> registerpaciente(String name, String email, String password);
+    Future<UserModelPaciente> loginpaciente(String cpf, String password);
+    Future<UserModelPaciente> registerpaciente(String name, String rg, String cpf, String telefone, String date, String email, String password);
+}
+abstract class AuthRepositoryMedico {
+  Future<UserModelMedico> registermedico(String name, String especialidade, String horario);
 }

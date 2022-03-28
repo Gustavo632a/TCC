@@ -33,9 +33,6 @@ with LoaderMixin, MessagesMixin{
     required String rua,
     required String cep,
     required String telefone,
-    required String medico,
-    required String especialidade,
-    required String horario,
     required String password,
     
   })

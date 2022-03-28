@@ -20,6 +20,10 @@ extends ChangeState<RegisterPagePaciente, RegisterControllerPaciente> {
   final _formKey = GlobalKey<FormState>();
   final _nameEC = TextEditingController();
   final _emailEC = TextEditingController();
+  final _cpfEC = TextEditingController();
+  final _telefoneEC = TextEditingController();
+  final _rgEC = TextEditingController();
+  final _dateEC = TextEditingController();
   final _passwordEC = TextEditingController();
 
   @override
@@ -68,6 +72,38 @@ extends ChangeState<RegisterPagePaciente, RegisterControllerPaciente> {
                     height: 27,
                   ),
                   ChangeTextformfield(
+                    label: 'RG',
+                    controller: _rgEC,
+                    validator: Validatorless.required('RG Obrigatório'),
+                    ),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
+                    label: 'CPF',
+                    controller: _cpfEC,
+                    validator: Validatorless.required('CPF Obrigatório'),
+                    ),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
+                    label: 'Data de nascimento',
+                    controller: _dateEC,
+                    validator: Validatorless.required('Data de nascimento Obrigatório'),
+                    ),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
+                    label: 'telefone',
+                    controller: _telefoneEC,
+                    validator: Validatorless.required('Telefone Obrigatório'),
+                    ),
+                  const SizedBox(
+                    height: 27,
+                  ),
+                  ChangeTextformfield(
                     label: 'E-mail',
                     controller: _emailEC,
                     validator: Validatorless.multiple([
@@ -83,7 +119,7 @@ extends ChangeState<RegisterPagePaciente, RegisterControllerPaciente> {
                     controller: _passwordEC,
                     obscureText: true,
                     validator: Validatorless.multiple([
-                      Validatorless.required('Password Obrigatório'),
+                      Validatorless.required('Senha Obrigatório'),
                       Validatorless.min(6, 'Senha deve conter pelo menos 6 caracteres')
                     ]
                     ),
@@ -111,7 +147,11 @@ extends ChangeState<RegisterPagePaciente, RegisterControllerPaciente> {
                         if(formValid) {
                           controller.registerpaci(
                             name: _nameEC.text, 
-                            email: _emailEC.text, 
+                            email: _emailEC.text,
+                            cpf: _cpfEC.text,
+                            rg: _rgEC.text,
+                            telefone: _telefoneEC.text,
+                            date: _dateEC.text,
                             password: _passwordEC.text);
                         }
                       },

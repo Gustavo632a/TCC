@@ -155,15 +155,6 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                   Center(
                     child: ChangeButton(
                       width: double.infinity,
-                      label: 'Cadastrar médicos',
-                      onPressed: () {
-                        Get.toNamed('/auth/registermedico');
-                      }
-                    ),
-                  ),
-                  Center(
-                    child: ChangeButton(
-                      width: double.infinity,
                       label: 'Cadastrar',
                       onPressed: () {
                         final formValid =  _formKey.currentState?.validate() ?? false;
@@ -175,9 +166,6 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                             cep: _cepEC.text,
                             telefone: _telefoneEC.text,
                             cnpj: _cnpjEC.text,
-                            medico: _medicoEC.text,
-                            especialidade: _especialidadeEC.text,
-                            horario: _horarioEC.text,
                             email: _emailEC.text, 
                             password: _passwordEC.text);
                         }

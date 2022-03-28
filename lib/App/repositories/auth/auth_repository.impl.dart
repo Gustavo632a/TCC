@@ -13,7 +13,7 @@ class AuthRepositoryImplPaciente implements AuthRepositoryPaciente{
     :_restClient = restClient;
 
   @override
-  Future<UserModelPaciente> registerpaciente(String name, String email, String password) async {
+  Future<UserModelPaciente> registerpaciente(String name, String telefone, String date, String cpf, String rg, String email, String password) async {
     final result = await _restClient.post('/auth/registerpaciente', {
       'name': name,
       'email': email,

@@ -90,13 +90,17 @@ extends ChangeState<RegisterPagePaciente, RegisterControllerPaciente> {
                   ChangeTextformfield(
                     label: 'Data de nascimento',
                     controller: _dateEC,
-                    validator: Validatorless.required('Data de nascimento Obrigatório'),
+                    validator: Validatorless.multiple([
+                    Validatorless.required('Data de nascimento Obrigatório'),
+                    Validatorless.date('Data inválida'),
+                    ],
                     ),
+                  ),
                   const SizedBox(
                     height: 27,
                   ),
                   ChangeTextformfield(
-                    label: 'telefone',
+                    label: 'Telefone',
                     controller: _telefoneEC,
                     validator: Validatorless.required('Telefone Obrigatório'),
                     ),

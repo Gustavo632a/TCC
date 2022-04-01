@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -6,9 +7,11 @@ import 'package:vakinha_burger_mobile/App/core/mixins/loader_mixin.dart';
 import 'package:vakinha_burger_mobile/App/core/mixins/messages_mixin.dart';
 import 'package:vakinha_burger_mobile/App/core/rest_client/rest_client.dart';
 import 'package:vakinha_burger_mobile/App/repositories/auth/auth_repository.dart';
+import 'package:http/http.dart' as http;
 
 class RegisterControllerClinica extends GetxController
 with LoaderMixin, MessagesMixin{
+
   final AuthRepositoryClinica _authRepositoryClinica;
 
   final _loading = false.obs;

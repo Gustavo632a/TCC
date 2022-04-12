@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vakinha_burger_mobile/App/core/services/auth_service.dart';
-import 'package:vakinha_burger_mobile/App/modules/home/Home_page.dart';
-import 'package:vakinha_burger_mobile/App/modules/menu/menu_page.dart';
+import 'package:Change/App/core/services/auth_service.dart';
+import 'package:Change/App/modules/home/Home_page.dart';
+import 'package:Change/App/modules/menu/menu_page.dart';
 
 class HomeController extends GetxController {
 

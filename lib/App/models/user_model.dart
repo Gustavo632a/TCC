@@ -1,25 +1,16 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 
 class UserModelClinica {
 
   final int id;
   final String name;
   final String cnpj;
-  final String bairro;
-  final String rua;
-  final String cep;
-  final String telefone;
   final String email;
   final String password;
 
   UserModelClinica({
     required this.id,
     required this.name,
-    required this.bairro,
-    required this.rua,
-    required this.cep,
-    required this.telefone,
     required this.cnpj,
     required this.email,
     required this.password,
@@ -29,14 +20,9 @@ class UserModelClinica {
     return {
       'id': id,
       'name': name,
-      'cnpj': cnpj,
-      'rua': rua,
-      'cep': cep,
-      'telefone': telefone,
-      'bairro': bairro,
+      'CNPJ': cnpj,
       'email': email,
       'password': password,
-      
     };
   }
 
@@ -46,10 +32,6 @@ class UserModelClinica {
       name: map['name'] ?? '',
       email: map['email'] ?? '',
       cnpj: map['cnpj'] ?? '',
-      bairro: map['bairro'] ?? '',
-      rua: map['rua'] ?? '',
-      cep: map['cep'] ?? '',
-      telefone: map['telefone'] ?? '',
       password: map['password'] ?? '',
     );
   }
@@ -62,20 +44,12 @@ class UserModelPaciente {
 
   final int id;
   final String name;
-  final String rg;
-  final String cpf;
-  final String date;
-  final String telefone;
   final String email;
   final String password;
 
   UserModelPaciente({
     required this.id,
     required this.name,
-    required this.cpf,
-    required this.date,
-    required this.rg,
-    required this.telefone,
     required this.email,
     required this.password,
   });
@@ -85,10 +59,6 @@ class UserModelPaciente {
       'id': id,
       'name': name,
       'email': email,
-      'cpf': cpf,
-      'date': date,
-      'rg': rg,
-      'telefone': telefone,
       'password': password,
     };
   }
@@ -98,10 +68,6 @@ class UserModelPaciente {
       id: map['id']?.toInt() ?? 0,
       name: map['name'] ?? '',
       email: map['email'] ?? '',
-      cpf: map['cpf'] ?? '',
-      rg: map['rg'] ?? '',
-      telefone: map['telefone'] ?? '',
-      date: map['date'] ?? '',
       password: map['password'] ?? '',
     );
   }

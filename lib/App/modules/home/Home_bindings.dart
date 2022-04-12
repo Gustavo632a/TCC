@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:vakinha_burger_mobile/App/modules/Home/Home_controller.dart';
+import 'package:Change/App/modules/Home/Home_controller.dart';
 
 class HomeBindings implements Bindings {
     @override

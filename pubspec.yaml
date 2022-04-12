@@ -1,5 +1,5 @@
-name: vakinha_burger_mobile
-description: Projeto Dart Week
+name: Change
+description: tcc
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -33,7 +33,6 @@ dependencies:
   get_storage: ^2.0.3
   validatorless: ^1.2.1
   intl: ^0.17.0
-  scoped_model: ^1.1.0
   http: ^0.13.4
 
   # The following adds the Cupertino Icons font to your application.

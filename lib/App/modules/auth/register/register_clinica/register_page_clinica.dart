@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_appbar.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_button.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_state.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_textformfield.dart';
-import 'package:vakinha_burger_mobile/App/modules/auth/register/register_clinica/register_controller_clinica.dart';
+import 'package:Change/App/core/ui/widgets/change_appbar.dart';
+import 'package:Change/App/core/ui/widgets/change_button.dart';
+import 'package:Change/App/core/ui/widgets/change_state.dart';
+import 'package:Change/App/core/ui/widgets/change_textformfield.dart';
+import 'package:Change/App/modules/auth/register/register_clinica/register_controller_clinica.dart';
 import 'package:validatorless/validatorless.dart';
 
 class RegisterPageClinica extends StatefulWidget{
@@ -22,6 +22,9 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
   final _cepEC = TextEditingController();
   final _telefoneEC = TextEditingController();
   final _ruaEC = TextEditingController();
+  final _medicoEC = TextEditingController();
+  final _especialidadeEC = TextEditingController();
+  final _horarioEC = TextEditingController();
   final _bairroEC = TextEditingController();
   final _cnpjEC = TextEditingController();
   final _emailEC = TextEditingController();
@@ -30,10 +33,6 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
   @override
   void dispose() {
     _emailEC.dispose();
-    _bairroEC.dispose();
-    _ruaEC.dispose();
-    _cepEC.dispose();
-    _telefoneEC.dispose();
     _cnpjEC.dispose();
     _nameEC.dispose();
     _passwordEC.dispose();

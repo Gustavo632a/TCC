@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_appbar.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_button.dart';
+import 'package:Change/App/core/ui/widgets/change_appbar.dart';
+import 'package:Change/App/core/ui/widgets/change_button.dart';
 
 class IdentificadorPage extends StatefulWidget {
   const IdentificadorPage({ Key? key }) : super(key: key);

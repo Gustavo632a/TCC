@@ -1,28 +1,14 @@
-
-import 'dart:convert';
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:vakinha_burger_mobile/App/core/constants/constants.dart';
-import 'package:vakinha_burger_mobile/App/core/mixins/loader_mixin.dart';
-import 'package:vakinha_burger_mobile/App/core/mixins/messages_mixin.dart';
-import 'package:vakinha_burger_mobile/App/core/rest_client/rest_client.dart';
-import 'package:vakinha_burger_mobile/App/repositories/auth/auth_repository.dart';
-import 'package:http/http.dart' as http;
+import 'package:Change/App/core/constants/constants.dart';
+import 'package:Change/App/core/mixins/loader_mixin.dart';
+import 'package:Change/App/core/mixins/messages_mixin.dart';
+import 'package:Change/App/core/rest_client/rest_client.dart';
+import 'package:Change/App/repositories/auth/auth_repository.dart';
 
 class RegisterControllerClinica extends GetxController
 with LoaderMixin, MessagesMixin{
-  // var dados;
-  // var name, cnpj, email, bairro, rua, cep, telefone, password;
-
-  // _listarDados() async {
-  //   // const url = "http://10.10.25.65/change/clinica/listar_clinica.php";
-  //   final response = await http.get(Uri.parse("http://10.10.25.65/change/clinica/listar_clinica.php"));
-  //   final map = json.decode(response.body);
-  //   final itens = map["result"];
-
-  //   this.dados = itens;
-  // }
 
   final AuthRepositoryClinica _authRepositoryClinica;
 
@@ -40,24 +26,24 @@ with LoaderMixin, MessagesMixin{
     super.onInit();
   }
 
-   Future<void> registerclini({
-     required String name,
-     required String cnpj,
-     required String email,
-     required String bairro,
-     required String rua,
-     required String cep,
-     required String telefone,
-     required String password,
+  Future<void> registerclini({
+    required String name,
+    required String cnpj,
+    required String email,
+    required String bairro,
+    required String rua,
+    required String cep,
+    required String telefone,
+    required String password,
     
-   })
+  })
   
   async {
 
       try {
         _loading.toggle();
         
-        final userLogged = await _authRepositoryClinica.registerclinica(name, cnpj, email, bairro , cep, telefone, rua, password);
+        final userLogged = await _authRepositoryClinica.registerclinica(name, cnpj, email, password);
         GetStorage().write(Constants.USER_KEY, userLogged.id);
 
       } on RestClientException catch (e, s) {

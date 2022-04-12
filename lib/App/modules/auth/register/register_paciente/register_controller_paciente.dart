@@ -1,11 +1,12 @@
+
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:vakinha_burger_mobile/App/core/constants/constants.dart';
-import 'package:vakinha_burger_mobile/App/core/mixins/loader_mixin.dart';
-import 'package:vakinha_burger_mobile/App/core/mixins/messages_mixin.dart';
-import 'package:vakinha_burger_mobile/App/core/rest_client/rest_client.dart';
-import 'package:vakinha_burger_mobile/App/repositories/auth/auth_repository.dart';
+import 'package:Change/App/core/constants/constants.dart';
+import 'package:Change/App/core/mixins/loader_mixin.dart';
+import 'package:Change/App/core/mixins/messages_mixin.dart';
+import 'package:Change/App/core/rest_client/rest_client.dart';
+import 'package:Change/App/repositories/auth/auth_repository.dart';
 
 class RegisterControllerPaciente extends GetxController 
 with LoaderMixin, MessagesMixin{
@@ -42,6 +43,11 @@ with LoaderMixin, MessagesMixin{
         final userLogged = await _authRepositoryPaciente.registerpaciente(name, cpf, rg, telefone, date, email, password);
         _loading.toggle();
         GetStorage().write(Constants.USER_KEY, userLogged.id);
+        _message(MessageModel(
+          title: 'Sucesso',
+          message: 'Cadastro realizado com sucesso',
+          type: MessageType.info
+        ));
 
       } on RestClientException catch (e, s) {
         _loading.toggle();
@@ -64,5 +70,4 @@ with LoaderMixin, MessagesMixin{
       }
     
     }
-
 }

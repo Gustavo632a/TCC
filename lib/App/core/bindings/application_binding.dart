@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:vakinha_burger_mobile/App/core/rest_client/rest_client.dart';
+import 'package:Change/App/core/rest_client/rest_client.dart';
 
 class ApplicationBinding implements Bindings {
   @override

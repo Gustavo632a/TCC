@@ -12,17 +12,17 @@ import 'package:http/http.dart' as http;
 
 class RegisterControllerClinica extends GetxController
 with LoaderMixin, MessagesMixin{
-  var dados;
-  var name, cnpj, email, bairro, rua, cep, telefone, password;
+  // var dados;
+  // var name, cnpj, email, bairro, rua, cep, telefone, password;
 
-  _listarDados() async {
-    // const url = "http://10.10.25.65/change/clinica/listar_clinica.php";
-    final response = await http.get(Uri.parse("http://10.10.25.65/change/clinica/listar_clinica.php"));
-    final map = json.decode(response.body);
-    final itens = map["result"];
+  // _listarDados() async {
+  //   // const url = "http://10.10.25.65/change/clinica/listar_clinica.php";
+  //   final response = await http.get(Uri.parse("http://10.10.25.65/change/clinica/listar_clinica.php"));
+  //   final map = json.decode(response.body);
+  //   final itens = map["result"];
 
-    this.dados = itens;
-  }
+  //   this.dados = itens;
+  // }
 
   final AuthRepositoryClinica _authRepositoryClinica;
 

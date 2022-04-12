@@ -23,12 +23,12 @@ class _IdentificadorPageState extends State<IdentificadorPage> {
           padding: const EdgeInsets.all(80.0),
         child: Stack(
           children: [
-           Align(
+          const Align(
              alignment: Alignment.topCenter,
              child: Text(
                'Escolha seu login:',
               textScaleFactor: 2,
-             ),
+             )
            ),
         Align(
         alignment: Alignment.center,

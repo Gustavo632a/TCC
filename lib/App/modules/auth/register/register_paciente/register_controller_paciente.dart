@@ -25,8 +25,12 @@ with LoaderMixin, MessagesMixin{
     super.onInit();
   }
 
-  Future<void> register({
+  Future<void> registerpaci({
     required String name,
+    required String cpf,
+    required String rg,
+    required String date,
+    required String telefone,
     required String email,
     required String password,
     
@@ -35,9 +39,8 @@ with LoaderMixin, MessagesMixin{
       try {
         _loading.toggle();
         
-        final userLogged = await _authRepositoryPaciente.registerpaciente(name, email, password);
+        final userLogged = await _authRepositoryPaciente.registerpaciente(name, cpf, rg, telefone, date, email, password);
         _loading.toggle();
-
         GetStorage().write(Constants.USER_KEY, userLogged.id);
 
       } on RestClientException catch (e, s) {
@@ -52,7 +55,7 @@ with LoaderMixin, MessagesMixin{
          _loading.toggle();
         log('Erro ao registrar usuário', error: e, stackTrace: s);
          _message(MessageModel(
-          title: 'Erro', 
+          title: 'Erro',
           message: 'Erro ao registrar usuário', 
           type: MessageType.error
           ));

@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
         color: const Color(0xFF4DBCE9),
         child: Stack(
           children: [
-           Align(
+         const  Align(
              alignment: Alignment.center,
              child: Text(
                'Bem-vindo(a)!',

@@ -13,7 +13,7 @@ class AuthRepositoryImplPaciente implements AuthRepositoryPaciente{
     :_restClient = restClient;
 
   @override
-  Future<UserModelPaciente> registerpaciente(String name, String email, String password) async {
+  Future<UserModelPaciente> registerpaciente(String name, String telefone, String date, String cpf, String rg, String email, String password) async {
     final result = await _restClient.post('/auth/registerpaciente', {
       'name': name,
       'email': email,
@@ -67,7 +67,7 @@ class AuthRepositoryImplClinica implements AuthRepositoryClinica{
     :_restClient = restClient;
 
   @override
-  Future<UserModelClinica> registerclinica(String name, String cnpj, String email, String password) async {
+  Future<UserModelClinica> registerclinica(String name, String cnpj, String email, String cep, String rua, String bairro, String telefone, String password) async {
     final result = await _restClient.post('/auth/registerclinica', {
       'name': name,
       'email': email,
@@ -76,7 +76,7 @@ class AuthRepositoryImplClinica implements AuthRepositoryClinica{
     });
 
     if(result.hasError) {
-      var message = 'Erro ao registrar o usuário';
+      var message = 'Erro ao registrar clínica';
       if(result.statusCode == 400)  {
         message = result.body['Error'];
       }
@@ -103,11 +103,11 @@ class AuthRepositoryImplClinica implements AuthRepositoryClinica{
         throw UserNotFoundException();
       }
 
-      log('Erro ao autenticar o usuário (${result.statusCode})',
+      log('Erro ao autenticar a clínica (${result.statusCode})',
       error: result.statusText,
       stackTrace: StackTrace.current,
       );
-      throw RestClientException('Erro ao autenticar o usuário');
+      throw RestClientException('Erro ao autenticar a clínica');
     }
 
     return UserModelClinica.fromMap(result.body);

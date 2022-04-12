@@ -19,12 +19,12 @@ class LoginPagePaciente extends StatefulWidget {
 class _LoginPageState extends ChangeState<LoginPagePaciente, LoginControllerPaciente> {
 
   final _formKey = GlobalKey<FormState>();
-  final _emailEC = TextEditingController();
+  final _cpfEC = TextEditingController();
   final _passwordEC = TextEditingController();
 
   @override
   void dispose() {
-    _emailEC.dispose();
+    _cpfEC.dispose();
     _passwordEC.dispose();
     super.dispose();
   }
@@ -61,11 +61,10 @@ class _LoginPageState extends ChangeState<LoginPagePaciente, LoginControllerPaci
                     const SizedBox(
                       height: 30,
                     ),
-                    ChangeTextformfield(label: 'E-mail',
-                    controller: _emailEC,
+                    ChangeTextformfield(label: 'CPF',
+                    controller: _cpfEC,
                     validator: Validatorless.multiple([
-                      Validatorless.required('E-mail Obrigatório'),
-                      Validatorless.email('E-mail Inválido')
+                      Validatorless.required('CPF Obrigatório'),
                     ]),
                     ),
                     const SizedBox(
@@ -89,7 +88,7 @@ class _LoginPageState extends ChangeState<LoginPagePaciente, LoginControllerPaci
                         onPressed: () {
                           final formValid = _formKey.currentState?.validate() ?? false;
                           if(formValid) {
-                            controller.login(email: _emailEC.text, password: _passwordEC.text);
+                            controller.loginpaci(cpf: _cpfEC.text, password: _passwordEC.text);
                           }
 
                         },),

@@ -31,7 +31,7 @@ class SplashPage extends StatelessWidget {
                   height: 60,
                 ),
                 ChangeButton(
-                label: 'ACESSO', 
+                label: 'ACESSAR', 
                 width: context.widthTransformer(reducedBy: 40),
                 height: 45,
                 onPressed: () {

@@ -67,7 +67,7 @@ class AuthRepositoryImplClinica implements AuthRepositoryClinica{
     :_restClient = restClient;
 
   @override
-  Future<UserModelClinica> registerclinica(String name, String cnpj, String email, String password) async {
+  Future<UserModelClinica> registerclinica(String name, String cnpj, String rua, String bairro, String cep, String email, String password) async {
     final result = await _restClient.post('/auth/registerclinica', {
       'name': name,
       'email': email,

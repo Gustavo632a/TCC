@@ -17,14 +17,13 @@ class RegisterPageClinica extends StatefulWidget{
 class _RegisterPageStateClinica
 extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
 
+  static const _baseUrl = 'https://change-e13d9-default-rtdb.firebaseio.com/';
+
   final _formKey = GlobalKey<FormState>();
   final _nameEC = TextEditingController();
   final _cepEC = TextEditingController();
   final _telefoneEC = TextEditingController();
   final _ruaEC = TextEditingController();
-  final _medicoEC = TextEditingController();
-  final _especialidadeEC = TextEditingController();
-  final _horarioEC = TextEditingController();
   final _bairroEC = TextEditingController();
   final _cnpjEC = TextEditingController();
   final _emailEC = TextEditingController();
@@ -38,7 +37,6 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
     _passwordEC.dispose();
     super.dispose();
   } 
-
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +62,6 @@ extends ChangeState<RegisterPageClinica, RegisterControllerClinica> {
                   ),
                   Text('Preencha os campos abaixo para criar o cadastro de sua clínica:',
                   style: context.textTheme.bodyText1
-            
         
                   ),
                   const SizedBox(

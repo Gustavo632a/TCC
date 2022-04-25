@@ -43,7 +43,7 @@ with LoaderMixin, MessagesMixin{
       try {
         _loading.toggle();
         
-        final userLogged = await _authRepositoryClinica.registerclinica(name, cnpj, email, password);
+        final userLogged = await _authRepositoryClinica.registerclinica(name, cnpj, rua, cep, bairro, email, password);
         GetStorage().write(Constants.USER_KEY, userLogged.id);
 
       } on RestClientException catch (e, s) {
@@ -52,13 +52,6 @@ with LoaderMixin, MessagesMixin{
          _message(MessageModel(
           title: 'Erro',
           message: e.message,
-          type: MessageType.error
-          ));
-          _loading.toggle();
-        log('Erro ao registrar clínica', error: e, stackTrace: s);
-         _message(MessageModel(
-          title: 'Erro',
-          message: 'Erro ao registrar clínica',
           type: MessageType.error
           ));
       }

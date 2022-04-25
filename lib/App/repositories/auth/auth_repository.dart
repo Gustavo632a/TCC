@@ -10,4 +10,4 @@ abstract class AuthRepositoryPaciente{
 }
 abstract class AuthRepositoryMedico {
   Future<UserModelMedico> registermedico(String name, String especialidade, String horario);
-}
+} 

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:vakinha_burger_mobile/App/modules/menu/widgets/product_tile.dart';
-import 'package:vakinha_burger_mobile/App/modules/menu/menu_controller.dart';
+import 'package:Change/App/modules/menu/widgets/product_tile.dart';
+import 'package:Change/App/modules/menu/menu_controller.dart';
 
 class MenuPage extends GetView<MenuController> {
   const MenuPage({Key? key}) : super(key: key);

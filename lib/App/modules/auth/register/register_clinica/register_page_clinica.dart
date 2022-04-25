@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_appbar.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_button.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_state.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/widgets/change_textformfield.dart';
-import 'package:vakinha_burger_mobile/App/modules/auth/register/register_clinica/register_controller_clinica.dart';
+import 'package:Change/App/core/ui/widgets/change_appbar.dart';
+import 'package:Change/App/core/ui/widgets/change_button.dart';
+import 'package:Change/App/core/ui/widgets/change_state.dart';
+import 'package:Change/App/core/ui/widgets/change_textformfield.dart';
+import 'package:Change/App/modules/auth/register/register_clinica/register_controller_clinica.dart';
 import 'package:validatorless/validatorless.dart';
 
 class RegisterPageClinica extends StatefulWidget{

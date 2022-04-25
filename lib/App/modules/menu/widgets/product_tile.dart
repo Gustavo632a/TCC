@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/change_ui.dart';
-import 'package:vakinha_burger_mobile/App/core/ui/formatter_helper.dart';
-import 'package:vakinha_burger_mobile/App/models/product_model.dart';
+import 'package:Change/App/core/ui/change_ui.dart';
+import 'package:Change/App/core/ui/formatter_helper.dart';
+import 'package:Change/App/models/product_model.dart';
 
 class ProductTile extends StatelessWidget {
   final ProductModel product;

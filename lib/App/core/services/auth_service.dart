@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:vakinha_burger_mobile/App/core/constants/constants.dart';
+import 'package:Change/App/core/constants/constants.dart';
 
 class AuthService extends GetxService {
 

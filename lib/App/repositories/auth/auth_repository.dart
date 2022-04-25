@@ -1,4 +1,4 @@
-import 'package:vakinha_burger_mobile/App/models/user_model.dart';
+import 'package:Change/App/models/user_model.dart';
 
 abstract class AuthRepositoryClinica{
     Future<UserModelClinica> loginclinica(String cnpj, String password);

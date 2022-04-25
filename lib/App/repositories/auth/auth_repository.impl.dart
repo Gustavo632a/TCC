@@ -1,8 +1,8 @@
 import 'dart:developer';
-import 'package:vakinha_burger_mobile/App/core/exceptions/user_notfound_exceptions.dart';
-import 'package:vakinha_burger_mobile/App/core/rest_client/rest_client.dart';
-import 'package:vakinha_burger_mobile/App/models/user_model.dart';
-import 'package:vakinha_burger_mobile/App/repositories/auth/auth_repository.dart';
+import 'package:Change/App/core/exceptions/user_notfound_exceptions.dart';
+import 'package:Change/App/core/rest_client/rest_client.dart';
+import 'package:Change/App/models/user_model.dart';
+import 'package:Change/App/repositories/auth/auth_repository.dart';
 
 class AuthRepositoryImplPaciente implements AuthRepositoryPaciente{
   final RestClient _restClient;

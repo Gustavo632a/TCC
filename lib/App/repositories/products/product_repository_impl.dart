@@ -1,7 +1,7 @@
 import 'dart:developer';
-import 'package:vakinha_burger_mobile/App/core/rest_client/rest_client.dart';
-import 'package:vakinha_burger_mobile/App/models/product_model.dart';
-import 'package:vakinha_burger_mobile/App/repositories/products/product_repository.dart';
+import 'package:Change/App/core/rest_client/rest_client.dart';
+import 'package:Change/App/models/product_model.dart';
+import 'package:Change/App/repositories/products/product_repository.dart';
 
 class ProductRepositoryImpl implements ProductRepository{
   final RestClient _restClient;

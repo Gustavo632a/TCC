@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -7,7 +6,7 @@ import 'package:Change/App/core/mixins/loader_mixin.dart';
 import 'package:Change/App/core/mixins/messages_mixin.dart';
 import 'package:Change/App/core/rest_client/rest_client.dart';
 import 'package:Change/App/repositories/auth/auth_repository.dart';
-import 'package:http/http.dart' as http;
+
 
 class RegisterControllerClinica extends GetxController
 with LoaderMixin, MessagesMixin{

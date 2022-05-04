@@ -15,7 +15,7 @@ class SplashPage extends StatelessWidget {
          const  Align(
              alignment: Alignment.center,
              child: Text(
-               'Bem-vindo(a)!',
+               'Bem-vindo(a) ao Change!',
               textScaleFactor: 2,
              ),
            ),
